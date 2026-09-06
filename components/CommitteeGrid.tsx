@@ -33,6 +33,17 @@ export default function CommitteeGrid({ committee }: CommitteeGridProps) {
     return m.roleCategory === activeCategory;
   });
 
+  const president =
+    committee.find(
+      (m) =>
+        m.designation?.toLowerCase().includes("president") ||
+        m.designation?.includes("সভাপতি")
+    ) || committee[0];
+
+  const presidentPhoto = president
+    ? urlForImage(president.photo) || president.photo
+    : "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80";
+
   return (
     <section id="committee" className="py-16 md:py-24 bg-[#fffdf8] text-[#1c1214] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -51,31 +62,32 @@ export default function CommitteeGrid({ committee }: CommitteeGridProps) {
         </div>
 
         {/* Message from President / Secretary */}
-        <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#260e15] to-[#1a080d] text-white shadow-xl border border-amber-500/30 flex flex-col md:flex-row items-center gap-6">
-          <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-amber-400/80 shadow-md">
-            <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
-              alt="President Dr. Alok Nath Banerjee"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="flex-1 text-center md:text-left">
-            <div className="inline-flex items-center gap-1.5 text-xs text-amber-300 font-semibold uppercase tracking-wider mb-1">
-              <Award className="w-3.5 h-3.5" />
-              <span>সভাপতির শুভেচ্ছা বার্তা • Message from the President</span>
+        {president && (
+          <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#260e15] to-[#1a080d] text-white shadow-xl border border-amber-500/30 flex flex-col md:flex-row items-center gap-6">
+            {presidentPhoto && (
+              <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-amber-400/80 shadow-md">
+                <Image
+                  src={presidentPhoto}
+                  alt={president.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            )}
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-flex items-center gap-1.5 text-xs text-amber-300 font-semibold uppercase tracking-wider mb-1">
+                <Award className="w-3.5 h-3.5" />
+                <span>সভাপতির শুভেচ্ছা বার্তা • Message from the President</span>
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-amber-200">
+                {president.bengaliName ? `${president.bengaliName} (${president.name})` : president.name}
+              </h3>
+              <p className="text-stone-300 text-xs sm:text-sm mt-2 leading-relaxed italic">
+                &ldquo;{president.message || "আমাদের অন্তস্প্রিহা আবাসিক দুর্গোৎসব এ বছর ৭৫তম বর্ষে পদার্পণ করছে। মায়ের আগমনে সকল দর্শনার্থী, আবাসিকবৃন্দ, পাড়াপ্রতিবেশী এবং কলকাতার সমস্ত মানুষকে আমাদের মণ্ডপে আন্তরিক আমন্ত্রণ জানাই।"}&rdquo;
+              </p>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold text-amber-200">
-              ডঃ অলোকনাথ ব্যানার্জী (Dr. Alok Nath Banerjee)
-            </h3>
-            <p className="text-stone-300 text-xs sm:text-sm mt-2 leading-relaxed italic">
-              &ldquo;আমাদের অন্তস্প্রিহা আবাসিক দুর্গোৎসব এ বছর ৭৫তম বর্ষে পদার্পণ করছে। মায়ের
-              আগমনে সকল দর্শনার্থী, আবাসিকবৃন্দ, পাড়াপ্রতিবেশী এবং কলকাতার সমস্ত মানুষকে আমাদের মণ্ডপে আন্তরিক
-              আমন্ত্রণ জানাই। আমাদের প্রয়াস — ঐতিহ্য রক্ষা এবং পরিচ্ছন্ন, পরিবেশবান্ধব শারদোৎসব উপহার
-              দেওয়া।&rdquo;
-            </p>
           </div>
-        </div>
+        )}
 
         {/* Category Filters */}
         <div className="flex overflow-x-auto pb-2 mb-10 scrollbar-none gap-2 justify-start sm:justify-center">
