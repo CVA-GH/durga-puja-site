@@ -71,18 +71,11 @@ export default function Hero({ settings }: HeroProps) {
           <div className="flex justify-center mb-6">
             <div className="relative group p-1 sm:p-1.5 rounded-2xl bg-gradient-to-tr from-amber-500/40 via-red-500/30 to-amber-600/40 shadow-2xl shadow-black/60 border border-amber-500/40 hover:border-amber-400 transition-all duration-300">
               <div className="overflow-hidden rounded-xl bg-[#faf6ef] p-2 sm:p-2.5 shadow-inner">
-                <!-- <Image
-                  src="/Logo.jpg"
-                  alt="Antaspriha Abashik Durgotsav 2026 Logo"
-                  width={140}
-                  height={210}
-                  priority
-                  className="h-28 sm:h-36 md:h-44 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                />-->
+                <!-- <Image src="/Logo.jpg" alt="Antaspriha Abashik Durgotsav 2026 Logo" width={140} height={210} priority className="h-28 sm:h-36 md:h-44 w-auto object-contain transition-transform duration-300 group-hover:scale-105" />-->
 
                   <Image
                   src="/Sparsh-logo.jpg"
-                  alt="Sparsh Cultural Soceity 2026 Logo"
+                  alt="Sparsh Cultural Society 2026 Logo"
                   width={140}
                   height={210}
                   priority
@@ -105,12 +98,14 @@ export default function Hero({ settings }: HeroProps) {
 
           {/* Main Title with Bengali Calligraphy Style */}
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4">
+            <!--<span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 drop-shadow-md"> -->
+            <!--  {settings.bengaliCommitteeName || "অন্তস্প্রিহা আবাসিক দুর্গোৎসব"} </span> -->
+
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 drop-shadow-md">
               {settings.bengaliCommitteeName || "অন্তস্প্রিহা আবাসিক দুর্গোৎসব"}
             </span>
-            <!-- <span className="block text-xl sm:text-2xl md:text-3xl font-semibold text-stone-200 mt-2 tracking-normal">
-              {settings.committeeName || "Antaspriha Abashik Durga Puja Committee"}
-            </span> -->
+              
+            <!-- <span className="block text-xl sm:text-2xl md:text-3xl font-semibold text-stone-200 mt-2 tracking-normal"> {settings.committeeName || "Antaspriha Abashik Durga Puja Committee"} </span> -->
 
               <span className="block text-xl sm:text-2xl md:text-3xl font-semibold text-stone-200 mt-2 tracking-normal">
               {settings.committeeName || "Sparsh Cultual Society"}
