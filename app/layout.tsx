@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "অন্তস্প্রিহা আবাসিক দুর্গোৎসব ২০২৬ | Antaspriha Abashik Durga Puja Committee",
-  description: "Official landing page of Antaspriha Abashik Durgotsav, Kolkata. Explore the complete Puja schedule from Maha Panchami to Vijaya Dashami, committee details, theme highlights, and photo gallery. শুভ শারদীয়া!",
+  title: "Sparsh Cultual Society (Bengali) ২০২৬ | Sparsh Cultual Society 2026",
+  description: "Official landing page of Sparsh Cultual Society, Kolkata. Explore the complete Puja schedule from Maha Panchami to Vijaya Dashami, committee details, theme highlights, and photo gallery. শুভ শারদীয়া!",
   keywords: [
     "Durga Puja Kolkata",
     "Durga Puja Schedule 2026",
-    "Antaspriha Abashik Durga Puja",
+    "Sparsh Cultual Society 2026",
     "Sandhi Puja Timings",
     "Kumari Puja",
     "Sindoor Khela",
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
     "দুর্গাপূজা নির্ঘণ্ট",
     "অন্তস্প্রিহা আবাসিক"
   ],
-  authors: [{ name: "Antaspriha Abashik Durga Puja Committee" }],
+  authors: [{ name: "Sparsh Cultual Society" }],
   openGraph: {
-    title: "অন্তস্প্রিহা আবাসিক দুর্গোৎসব ২০২৬ | Antaspriha Abashik Durga Puja Committee",
+    title: "Sparsh Cultual Society (Bengali) ২০২৬ | Sparsh Cultual Society 2026",
     description: "Official Puja schedule, live timings, committee details, and photo gallery. Celebrating 75 years of heritage and devotion in Kolkata.",
     type: "website",
     locale: "bn_IN",
   },
   icons: {
-    icon: "/Logo.jpg",
-    apple: "/Logo.jpg",
+    icon: "/Sparsh-logo.jpg",
+    apple: "/Sparsh-logo.jpg",
   },
 };
 
