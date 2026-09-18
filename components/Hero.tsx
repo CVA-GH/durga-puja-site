@@ -102,7 +102,7 @@ export default function Hero({ settings }: HeroProps) {
             <!--  {settings.bengaliCommitteeName || "অন্তস্প্রিহা আবাসিক দুর্গোৎসব"} </span> -->
 
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 drop-shadow-md">
-              {settings.bengaliCommitteeName || "অন্তস্প্রিহা আবাসিক দুর্গোৎসব"}
+              {settings.bengaliCommitteeName || "Sparsh Cultual Society (Bengali)"}
             </span>
               
             <!-- <span className="block text-xl sm:text-2xl md:text-3xl font-semibold text-stone-200 mt-2 tracking-normal"> {settings.committeeName || "Antaspriha Abashik Durga Puja Committee"} </span> -->
